@@ -15,15 +15,15 @@ Then, I thought if there is a collection to let me embed fonts in CloudFlare Wor
 ## Usage
 
 ```typescript
-import { baloo } from "worker-font";
-// const { baloo } = require("worker-font");
+import { Baloo_2 } from "worker-font";
+// const { Baloo_2 } = require("worker-font");
 
 const my_css = `font-face { 
-    font-family: "${baloo.name}";
+    font-family: "${Baloo_2.name}";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url("${baloo.base64}") format("woff2");
+    src: url("${Baloo_2.base64}") format("woff2");
 }`;
 ```
 
