@@ -1,0 +1,35 @@
+{
+    "name": "worker-font",
+    "version": "0.0.1",
+    "description": "A Font Collection for CloudFlare Workers.",
+    "keywords": [
+        "cloudflare",
+        "workers",
+        "font",
+        "collection"
+    ],
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "files": [
+        "lib"
+    ],
+    "scripts": {
+        "prepare": "npm run gen",
+        "gen": "npx ts-node ./src/build.ts",
+        "build": "tsc",
+        "format": "prettier --write \"src/*.ts\""
+    },
+    "author": "JacobLinCool <jacoblincool@gmail.com> (https://github.com/JacobLinCool)",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^16.11.12",
+        "@types/node-fetch": "^2.5.12",
+        "dotenv": "^10.0.0",
+        "fonteditor-core": "^2.1.8",
+        "node-fetch": "^2.6.6",
+        "prettier": "^2.5.1",
+        "ts-node": "^10.4.0",
+        "typedoc": "^0.22.10",
+        "typescript": "^4.5.2"
+    }
+}
