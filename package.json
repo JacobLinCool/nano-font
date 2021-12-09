@@ -17,7 +17,8 @@
         "prepare": "npm run gen && npm run build",
         "gen": "npx ts-node ./src/build.ts",
         "build": "tsc",
-        "format": "prettier --write \"src/*.ts\""
+        "format": "prettier --write \"src/*.ts\"",
+        "docs": "typedoc ./src/ --tsconfig ./tsconfig.json"
     },
     "author": "JacobLinCool <jacoblincool@gmail.com> (https://github.com/JacobLinCool)",
     "license": "MIT",
