@@ -45,7 +45,7 @@ async function build(force_rebuild = false) {
 
                 if (force_rebuild || !fs.existsSync(font_path)) {
                     const base64 = await get_font_base64(font.files.regular);
-                    fs.writeFileSync(font_path, `export const name = "${font.family}"; export const base64 = "${base64}";`);
+                    fs.writeFileSync(font_path, `export const name: string = "${font.family}"; export const base64: string = "${base64}";`);
                 }
 
                 font_list.push(font_name);
@@ -67,9 +67,11 @@ async function get_font_base64(url: string) {
     const res = await fetch(url);
     const buffer = await res.buffer();
 
+    const range = Array.from({ length: 128 }).map((_, i) => i);
+
     const font = Font.create(buffer, {
         type: path.extname(url).slice(1) as FontEditor.FontType,
-        subset: [0, 127],
+        subset: range,
         hinting: true,
     });
 
