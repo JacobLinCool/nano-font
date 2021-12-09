@@ -14,7 +14,7 @@
         "lib"
     ],
     "scripts": {
-        "prepare": "npm run gen",
+        "prepare": "npm run gen && npm run build",
         "gen": "npx ts-node ./src/build.ts",
         "build": "tsc",
         "format": "prettier --write \"src/*.ts\""
