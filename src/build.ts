@@ -15,7 +15,7 @@ async function build(force_rebuild = false) {
         throw new Error("GOOGLE_API_KEY is not defined. Run npm run gen again after setting it.");
     }
 
-    const google_font_list = await fetch(`https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=${process.env.GOOGLE_API_KEY}`)
+    const google_font_list = await fetch(`https://www.googleapis.com/webfonts/v1/webfonts?sort=alpha&key=${process.env.GOOGLE_API_KEY}`)
         .then((res) => {
             if (!res.ok) {
                 throw new Error(`${res.status} ${res.statusText}`);
@@ -45,7 +45,21 @@ async function build(force_rebuild = false) {
 
                 if (force_rebuild || !fs.existsSync(font_path)) {
                     const base64 = await get_font_base64(font.files.regular);
-                    fs.writeFileSync(font_path, `export const name: string = "${font.family}"; export const base64: string = "${base64}";`);
+                    fs.writeFileSync(
+                        font_path,
+                        [
+                            `
+/**
+ * [View ${font.family} on Google Fonts](https://fonts.google.com/specimen/${font.family.replace(/ /g, "+")})
+ * 
+ * @module
+ */
+`,
+                            `import type { CssFontName, Base64EncodedWoff2 } from "../types";`,
+                            `export const name: CssFontName = "${font.family}";`,
+                            `export const base64: Base64EncodedWoff2 = "${base64}";`,
+                        ].join("\n"),
+                    );
                 }
 
                 font_list.push(font_name);
