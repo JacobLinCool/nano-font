@@ -2,7 +2,7 @@
 
  [![NPM](https://img.shields.io/npm/v/worker-font.svg?style=flat)](https://www.npmjs.com/package/worker-font)
 
- A Font Collection for CloudFlare Workers. 1300+ Google Fonts!
+ A Font Collection for CloudFlare Workers. Including 1300+ Google Fonts!
 
 ## Why?
 
@@ -12,7 +12,7 @@ But external fonts are not available in SVG, so I had to embed the font in base6
 
 There is a size limit of 1 MB for CloudFlare Workers. So I cannot just convert the font to base64 format. I had to remove some useless characters from the font.
 
-Then, I thought if there is a collection to let me embed fonts in CloudFlare Workers, the things will be easier.
+Then, I thought if there is a collection to let me embed fonts in CloudFlare Workers, things will be easier.
 
 ## Usage
 
@@ -43,4 +43,10 @@ const my_css = `font-face {
 
 ## Docs
 
-Here: [Docs](https://jacoblincool.github.io/worker-font/)
+[Worker-Font Documentation](https://jacoblincool.github.io/worker-font/)
+
+## Links
+
+- GitHub Repository: <https://github.com/JacobLinCool/worker-font>
+- NPM Package: <https://www.npmjs.com/package/worker-font>
+- Documentation: <https://jacoblincool.github.io/worker-font/>
