@@ -80,3 +80,5 @@ lib/
 src/fonts/
 
 docs/
+
+**/.DS_Store

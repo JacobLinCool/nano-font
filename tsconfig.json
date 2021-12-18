@@ -4,7 +4,7 @@
         "transpileOnly": true,
         "files": true,
     },
-    "exclude": ["lib", "example", "tests"],
+    "exclude": ["lib", "example", "tests", "tsup.config.ts"],
     "compilerOptions": {
         /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
