@@ -25,7 +25,7 @@
     "author": "JacobLinCool <jacoblincool@gmail.com> (https://github.com/JacobLinCool)",
     "license": "MIT",
     "devDependencies": {
-        "@types/node": "16.11.12",
+        "@types/node": "16.11.35",
         "@types/node-fetch": "2.5.12",
         "dotenv": "10.0.0",
         "fonteditor-core": "2.1.8",
