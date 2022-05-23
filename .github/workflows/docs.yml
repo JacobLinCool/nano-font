@@ -1,4 +1,4 @@
-name: Build Docs
+name: Build Docs and Deploy Generated Code
 
 on:
     push:
@@ -22,11 +22,16 @@ jobs:
               env:
                   GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
-            - name: Deploy
+            - name: Deploy Docs
               uses: peaceiris/actions-gh-pages@v3
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN  }}
                   publish_dir: "./docs"
-                  user_name: "JacobLinCool"
-                  user_email: "jacoblincool@users.noreply.github.com"
                   publish_branch: "gh-pages"
+
+            - name: Deploy Generated Code
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN  }}
+                  publish_dir: "./lib"
+                  publish_branch: "lib"
