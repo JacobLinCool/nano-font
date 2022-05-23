@@ -1,11 +1,13 @@
 {
     "name": "nano-font",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "A Size Limited Font Collection for Serverless Environment. Including 1300+ Google Fonts!",
     "keywords": [
         "tiny",
+        "nano",
         "font",
-        "collection"
+        "collection",
+        "serverless"
     ],
     "main": "lib/index.js",
     "module": "lib/index.mjs",
