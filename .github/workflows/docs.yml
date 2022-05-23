@@ -29,9 +29,10 @@ jobs:
                   publish_dir: "./docs"
                   publish_branch: "gh-pages"
 
-            - name: Deploy Generated Code
+            - name: Deploy Generated TypeScript Code
               uses: peaceiris/actions-gh-pages@v3
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN  }}
-                  publish_dir: "./lib"
-                  publish_branch: "lib"
+                  publish_dir: "./src/fonts"
+                  publish_branch: "fonts-ts"
+                  exclude_assets: "build.ts,template.ts,utils.ts"
