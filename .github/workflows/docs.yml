@@ -16,11 +16,11 @@ jobs:
 
             - name: Install Packages
               run: npx -y pnpm i
-              env:
-                  GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
             - name: TypeDoc Build
               run: npm run build && npm run docs
+              env:
+                  GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
             - name: Deploy
               uses: peaceiris/actions-gh-pages@v3
