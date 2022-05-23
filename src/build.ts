@@ -1,9 +1,12 @@
-import fs from "fs";
-import path from "path";
 import dotenv from "dotenv";
+import { Font, FontEditor, woff2 } from "fonteditor-core";
+import fs from "fs";
 import fetch from "node-fetch";
-import { Font, woff2, FontEditor } from "fonteditor-core";
+import ora from "ora";
+import path from "path";
+import { template } from "./template";
 import type { GoogleFont } from "./types";
+import { T } from "./utils";
 
 dotenv.config();
 
@@ -12,10 +15,14 @@ build();
 async function build(force_rebuild = false) {
     const START_TIME = Date.now();
     if (!process.env.GOOGLE_API_KEY) {
-        throw new Error("GOOGLE_API_KEY is not defined. Run npm run gen again after setting it.");
+        throw new Error(`GOOGLE_API_KEY is not defined. Run again after setting it in ".env".`);
     }
 
-    const google_font_list = await fetch(`https://www.googleapis.com/webfonts/v1/webfonts?sort=alpha&key=${process.env.GOOGLE_API_KEY}`)
+    const spinner = ora({ text: "Fetching font list from Google Fonts" }).start();
+
+    const google_font_list = await fetch(
+        `https://www.googleapis.com/webfonts/v1/webfonts?sort=alpha&key=${process.env.GOOGLE_API_KEY}`,
+    )
         .then((res) => {
             if (!res.ok) {
                 throw new Error(`${res.status} ${res.statusText}`);
@@ -23,6 +30,8 @@ async function build(force_rebuild = false) {
             return res.json();
         })
         .then((json) => json.items as GoogleFont[]);
+
+    spinner.succeed(`Fetched ${google_font_list.length} fonts from Google Fonts`);
 
     fs.mkdirSync(path.resolve(__dirname, "fonts"), { recursive: true });
 
@@ -41,51 +50,46 @@ async function build(force_rebuild = false) {
 
         if (font.files.regular) {
             try {
-                process.stdout.write(`[${(i + 1).toString().padStart(padding)} / ${list_length}] ${font.family}... `);
+                spinner.start(
+                    [
+                        `[${(i + 1).toString().padStart(padding)} / ${list_length}]`,
+                        `Building ${font.family}`,
+                    ].join(" "),
+                );
 
                 if (force_rebuild || !fs.existsSync(font_path)) {
                     const base64 = await get_font_base64(font.files.regular);
-                    fs.writeFileSync(
-                        font_path,
-                        [
-                            `
-/**
- * [View ${font.family} on Google Fonts](https://fonts.google.com/specimen/${font.family.replace(/ /g, "+")})
- * 
- * @module
- */
-`,
-                            `import type { CssFontName, Base64EncodedWoff2 } from "../types";`,
-                            `export const name: CssFontName = "${font.family}";`,
-                            `export const base64: Base64EncodedWoff2 = "${base64}";`,
-                        ].join("\n"),
-                    );
+                    fs.writeFileSync(font_path, T(template, { font, base64 }));
                 }
 
                 font_list.push(font_name);
 
-                console.log("\u001b[92mDONE\u001b[m");
+                spinner.succeed(`Built ${font.family}`);
             } catch (err) {
-                console.log("\u001b[91mFAILED\u001b[m");
+                spinner.fail(`Failed to build ${font.family}: ${(err as Error).message}`);
             }
         }
     }
 
-    fs.writeFileSync(path.resolve(__dirname, "fonts", "index.ts"), font_list.map((font_name) => `export * as ${font_name} from "./${font_name}";`).join("\n"));
-    fs.writeFileSync(path.resolve(__dirname, "fonts", "types.ts"), `export type FontFamily = ${font_list.map((font) => `"${font}"`).join(" | ")};`);
+    fs.writeFileSync(
+        path.resolve(__dirname, "fonts", "index.ts"),
+        font_list.map((font_name) => `export * as ${font_name} from "./${font_name}";`).join("\n"),
+    );
+    fs.writeFileSync(
+        path.resolve(__dirname, "fonts", "types.ts"),
+        `export type FontFamily = ${font_list.map((font) => `"${font}"`).join(" | ")};`,
+    );
 
-    console.log(`\n\u001b[92mFont generating completed in ${(Date.now() - START_TIME) / 1000}s\u001b[m`);
+    spinner.succeed(`Built ${font_list.length} fonts in ${(Date.now() - START_TIME) / 1000}s`);
 }
 
 async function get_font_base64(url: string) {
     const res = await fetch(url);
     const buffer = await res.buffer();
 
-    const range = Array.from({ length: 128 }).map((_, i) => i);
-
     const font = Font.create(buffer, {
         type: path.extname(url).slice(1) as FontEditor.FontType,
-        subset: range,
+        subset: Array.from({ length: 95 }).map((_, i) => i + 32), // ASCII 32 ~ 126
         hinting: true,
     });
 
