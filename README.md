@@ -1,4 +1,4 @@
-# Tiny Font
+# Nano Font
 
 [![NPM](https://img.shields.io/npm/v/nano-font.svg?style=flat)](https://www.npmjs.com/package/nano-font)
 
