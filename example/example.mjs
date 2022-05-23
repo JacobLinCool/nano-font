@@ -1,3 +1,3 @@
-import { Fonts } from "../lib/index.mjs";
+import { Source_Code_Pro } from "../lib/index.mjs";
 
-console.log(Fonts.Source_Code_Pro.name, Fonts.Source_Code_Pro.base64);
+console.log(Source_Code_Pro.name, Source_Code_Pro.base64);

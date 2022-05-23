@@ -51,7 +51,7 @@ export type Base64EncodedWoff2 = string;
  * Font.
  *
  * ```typescript
- * import Baloo_2 from "worker-font/lib/fonts/Baloo_2";
+ * import Baloo_2 from "nano-font/lib/fonts/Baloo_2";
  *
  * const my_css = `font-face {
  *     font-family: "${Baloo_2.name}";

@@ -1,3 +1,3 @@
-import { Fonts } from "../lib/index.js";
+import { Baloo_2 } from "../lib/index.js";
 
-console.log(Fonts.Source_Code_Pro.name, Fonts.Source_Code_Pro.base64);
+console.log(Baloo_2.name, Baloo_2.base64);

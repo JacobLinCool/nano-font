@@ -1,25 +1,26 @@
-# Worker Font
+# Tiny Font
 
- [![NPM](https://img.shields.io/npm/v/worker-font.svg?style=flat)](https://www.npmjs.com/package/worker-font)
+[![NPM](https://img.shields.io/npm/v/nano-font.svg?style=flat)](https://www.npmjs.com/package/nano-font)
 
- A Font Collection for CloudFlare Workers. Including 1300+ Google Fonts!
+A Size Limited Font Collection for Serverless Environment. Including 1300+ Google Fonts!
 
 ## Why?
 
-When I was working on [LeetCode Stats Card](https://github.com/JacobLinCool/LeetCode-Stats-Card), I wanted to use fonts that were available on Google Fonts.
+During the development of [LeetCode Stats Card](https://github.com/JacobLinCool/LeetCode-Stats-Card), a dynamic SVG image generator powered by Cloudflare Workers, I wanted to use fonts that were available on Google Fonts to display the texts.
 
-But external fonts are not available in SVG, so I had to embed the font in base64 format.
+Then I faced two problems:
 
-There is a size limit of 1 MB for CloudFlare Workers. So I cannot just convert the font to base64 format. I had to remove some useless characters from the font.
+1. External fonts are not available in SVG, so I embed the font in base64 format.
+2. The size limit of the script is 1MB, so I remove some useless characters to contain more fonts.
 
-Then, I thought if there is a collection to let me embed fonts in CloudFlare Workers, things will be easier.
+Then, I thought if there is a collection to let me directly embed fonts in such an environment, things will be easier.
 
 ## Usage
 
 ```typescript
-import { Baloo_2 } from "worker-font";
-// const { Baloo_2 } = require("worker-font");
-// import Baloo_2 from "worker-font/lib/fonts/Baloo_2"; // reduce bundle size
+import { Baloo_2 } from "nano-font";
+// const { Baloo_2 } = require("nano-font");
+// import Baloo_2 from "nano-font/lib/fonts/Baloo_2";
 
 const my_css = `font-face { 
     font-family: "${Baloo_2.name}";
@@ -39,14 +40,14 @@ const my_css = `font-face {
 
 ### Fonts Included
 
-[1300+ Fonts](https://jacoblincool.github.io/worker-font/modules/Fonts.html) from Google Fonts.
+[1300+ Fonts](https://jacoblincool.github.io/nano-font/modules/Fonts.html) from Google Fonts.
 
 ## Docs
 
-[Worker-Font Documentation](https://jacoblincool.github.io/worker-font/)
+[nano-font Documentation](https://jacoblincool.github.io/nano-font/)
 
 ## Links
 
-- GitHub Repository: <https://github.com/JacobLinCool/worker-font>
-- NPM Package: <https://www.npmjs.com/package/worker-font>
-- Documentation: <https://jacoblincool.github.io/worker-font/>
+- GitHub Repository: <https://github.com/JacobLinCool/nano-font>
+- NPM Package: <https://www.npmjs.com/package/nano-font>
+- Documentation: <https://jacoblincool.github.io/nano-font/>
