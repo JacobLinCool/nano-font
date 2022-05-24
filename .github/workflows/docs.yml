@@ -35,4 +35,3 @@ jobs:
                   github_token: ${{ secrets.GITHUB_TOKEN  }}
                   publish_dir: "./src"
                   publish_branch: "fonts-ts"
-                  exclude_assets: "build.ts,template.ts,utils.ts"

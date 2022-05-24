@@ -1,6 +1,6 @@
 {
     "name": "nano-font",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "description": "A Size Limited Font Collection for Serverless Environment. Including 1300+ Google Fonts!",
     "keywords": [
         "tiny",
@@ -9,16 +9,16 @@
         "collection",
         "serverless"
     ],
-    "main": "lib/index.js",
-    "module": "lib/index.mjs",
-    "types": "lib/index.d.ts",
+    "main": "fonts/index.js",
+    "module": "fonts/index.mjs",
+    "types": "fonts/index.d.ts",
     "files": [
-        "lib"
+        "fonts"
     ],
     "scripts": {
-        "gen": "npx ts-node ./src/build.ts",
-        "build": "npm run gen && tsup",
-        "format": "prettier --write \"src/*.ts\"",
+        "gen": "npx -y ts-node ./builder",
+        "build": "npm run gen && tsc && tsup",
+        "format": "prettier --write \"builder/*.ts\"",
         "docs": "typedoc ./src/ --tsconfig ./tsconfig.json",
         "test": "jest --coverage"
     },

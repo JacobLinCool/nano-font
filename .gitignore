@@ -75,9 +75,9 @@ typings/
 # FuseBox cache
 .fusebox/
 
-lib/
+fonts/
 
-src/fonts/
+src/
 
 docs/
 

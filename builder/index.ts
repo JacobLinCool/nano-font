@@ -10,10 +10,13 @@ import { T } from "./utils";
 
 dotenv.config();
 
+const dist = path.resolve("src");
+
 build();
 
 async function build(force_rebuild = false) {
     const START_TIME = Date.now();
+
     if (!process.env.GOOGLE_API_KEY) {
         throw new Error(`GOOGLE_API_KEY is not defined. Run again after setting it in ".env".`);
     }
@@ -33,7 +36,7 @@ async function build(force_rebuild = false) {
 
     spinner.succeed(`Fetched ${google_font_list.length} fonts from Google Fonts`);
 
-    fs.mkdirSync(path.resolve(__dirname, "fonts"), { recursive: true });
+    fs.mkdirSync(dist, { recursive: true });
 
     // @ts-ignore
     await woff2.init();
@@ -46,7 +49,7 @@ async function build(force_rebuild = false) {
     for (let i = 0; i < list_length; i++) {
         const font = google_font_list[i];
         const font_name = font.family.replace(/ /g, "_");
-        const font_path = path.resolve(__dirname, "fonts", `${font_name}.ts`);
+        const font_path = path.resolve(dist, `${font_name}.ts`);
 
         if (font.files.regular) {
             try {
@@ -59,7 +62,8 @@ async function build(force_rebuild = false) {
 
                 if (force_rebuild || !fs.existsSync(font_path)) {
                     const base64 = await get_font_base64(font.files.regular);
-                    fs.writeFileSync(font_path, T(template, { font, base64 }));
+                    const size = Math.round(base64.length / 102.4) / 10;
+                    fs.writeFileSync(font_path, T(template, { font, base64, font_name, size }));
                 }
 
                 font_list.push(font_name);
@@ -72,18 +76,18 @@ async function build(force_rebuild = false) {
     }
 
     fs.writeFileSync(
-        path.resolve(__dirname, "fonts", "index.ts"),
-        font_list.map((font_name) => `export * as ${font_name} from "./${font_name}";`).join("\n"),
+        path.resolve(dist, "index.ts"),
+        font_list.map((font_name) => `export { ${font_name} } from "./${font_name}";`).join("\n"),
     );
     fs.writeFileSync(
-        path.resolve(__dirname, "fonts", "types.ts"),
+        path.resolve(dist, "types.ts"),
         `export type FontFamily = ${font_list.map((font) => `"${font}"`).join(" | ")};`,
     );
 
     spinner.succeed(`Built ${font_list.length} fonts in ${(Date.now() - START_TIME) / 1000}s`);
 }
 
-async function get_font_base64(url: string) {
+async function get_font_base64(url: string): Promise<string> {
     const res = await fetch(url);
     const buffer = await res.buffer();
 
@@ -95,5 +99,3 @@ async function get_font_base64(url: string) {
 
     return font.toBase64({ type: "woff2" }, font.write({ type: "woff2", hinting: true }));
 }
-
-export default build;
