@@ -1,3 +1,3 @@
-import { Baloo_2 } from "../lib/index.js";
+import Source_Code_Pro from "nano-font/fonts/Source_Code_Pro";
 
-console.log(Baloo_2.name, Baloo_2.base64);
+console.log(Source_Code_Pro.name, Source_Code_Pro.base64.length / 1024, "KB");

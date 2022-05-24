@@ -2,13 +2,14 @@
 
 [![NPM](https://img.shields.io/npm/v/nano-font.svg?style=flat)](https://www.npmjs.com/package/nano-font)
 
-A Size Limited Font Collection for Serverless Environment. Including 1300+ Google Fonts!
+A Size Limited and TypeScript Friendly Font Collection for Serverless Environment. Including 1300+ Google Fonts!
 
-> The unpacked size (~56 MB) includes all 1,300+ fonts in 2 formats (ESM, CJS).
+![ts-support](img/ts-support.png)
+
+> The unpacked size (~66 MB) includes all 1,300+ fonts in 3 formats.
+> (ESM: ~30 MB, CJS: ~30 MB, DTS: ~6 MB)
 >
-> The average size of each font is about 21.5 KB (56,000,000 / (1,300 * 2) / 1,000).
->
-> Please use a good bundler or do tree-shaking by yourself.
+> The average size of each font is about 22 KB.
 
 ## Why?
 
@@ -24,11 +25,11 @@ Then, I thought if there is a collection to let me directly embed fonts in such 
 ## Usage
 
 ```typescript
-import { Baloo_2 } from "nano-font";
-// const { Baloo_2 } = require("nano-font");
-// import Baloo_2 from "nano-font/lib/fonts/Baloo_2";
+import Baloo_2 from "nano-font/fonts/Baloo_2";
+// const Baloo_2 = require("nano-font/fonts/Baloo_2");
 
-const my_css = `font-face { 
+const my_css = `
+font-face { 
     font-family: "${Baloo_2.name}";
     font-style: normal;
     font-weight: 400;
@@ -50,7 +51,7 @@ const my_css = `font-face {
 
 ## Docs
 
-[nano-font Documentation](https://jacoblincool.github.io/nano-font/)
+[nano-font Documentation](https://jacoblincool.github.io/nano-font/) (including supported font list)
 
 ## Links
 
