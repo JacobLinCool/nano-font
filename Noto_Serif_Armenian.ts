@@ -1,0 +1,20 @@
+
+/**
+ * Noto Serif Armenian (serif) v15 (2022-05-10) | 2.8 KB
+ * 
+ * [View Noto Serif Armenian on Google Fonts](https://fonts.google.com/specimen/Noto+Serif+Armenian)
+ * @module
+ */
+
+/** Noto Serif Armenian (serif) | 2.8 KB | see https://fonts.google.com/specimen/Noto+Serif+Armenian */
+export const name = "Noto Serif Armenian";
+/** Noto Serif Armenian (serif) | 2.8 KB | see https://fonts.google.com/specimen/Noto+Serif+Armenian */
+export const base64: string = "data:font/woff2;charset=utf-8;base64,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";
+/** Noto Serif Armenian (serif) | 2.8 KB | see https://fonts.google.com/specimen/Noto+Serif+Armenian */
+export const Noto_Serif_Armenian = {
+    /** Noto Serif Armenian (serif) | 2.8 KB */
+    name,
+    /** Noto Serif Armenian (serif) | 2.8 KB */
+    base64
+};
+export default Noto_Serif_Armenian;
