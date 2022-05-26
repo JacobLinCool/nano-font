@@ -1,6 +1,6 @@
 {
     "name": "nano-font",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "A Size Limited Font Collection for Serverless Environment. Including 1300+ Google Fonts!",
     "keywords": [
         "tiny",
