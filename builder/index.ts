@@ -10,7 +10,8 @@ import { T } from "./utils";
 
 dotenv.config();
 
-const dist = path.resolve("src");
+const code_dist = path.resolve("src");
+const json_dist = path.resolve("json");
 
 build();
 
@@ -36,7 +37,8 @@ async function build(force_rebuild = false) {
 
     spinner.succeed(`Fetched ${google_font_list.length} fonts from Google Fonts`);
 
-    fs.mkdirSync(dist, { recursive: true });
+    fs.mkdirSync(code_dist, { recursive: true });
+    fs.mkdirSync(json_dist, { recursive: true });
 
     // @ts-ignore
     await woff2.init();
@@ -49,7 +51,8 @@ async function build(force_rebuild = false) {
     for (let i = 0; i < list_length; i++) {
         const font = google_font_list[i];
         const font_name = font.family.replace(/ /g, "_");
-        const font_path = path.resolve(dist, `${font_name}.ts`);
+        const code_path = path.resolve(code_dist, `${font_name}.ts`);
+        const json_path = path.resolve(json_dist, `${font_name}.json`);
 
         if (font.files.regular) {
             try {
@@ -60,10 +63,11 @@ async function build(force_rebuild = false) {
                     ].join(" "),
                 );
 
-                if (force_rebuild || !fs.existsSync(font_path)) {
+                if (force_rebuild || !fs.existsSync(code_path)) {
                     const base64 = await get_font_base64(font.files.regular);
                     const size = Math.round(base64.length / 102.4) / 10;
-                    fs.writeFileSync(font_path, T(template, { font, base64, font_name, size }));
+                    fs.writeFileSync(code_path, T(template, { font, base64, font_name, size }));
+                    fs.writeFileSync(json_path, JSON.stringify({ name: font.family, base64 }));
                 }
 
                 font_list.push(font_name);
@@ -76,11 +80,11 @@ async function build(force_rebuild = false) {
     }
 
     fs.writeFileSync(
-        path.resolve(dist, "index.ts"),
+        path.resolve(code_dist, "index.ts"),
         font_list.map((font_name) => `export { ${font_name} } from "./${font_name}";`).join("\n"),
     );
     fs.writeFileSync(
-        path.resolve(dist, "types.ts"),
+        path.resolve(code_dist, "types.ts"),
         `export type FontFamily = ${font_list.map((font) => `"${font}"`).join(" | ")};`,
     );
 
