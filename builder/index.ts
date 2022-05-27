@@ -52,7 +52,7 @@ async function build(force_rebuild = false) {
         const font = google_font_list[i];
         const font_name = font.family.replace(/ /g, "_");
         const code_path = path.resolve(code_dist, `${font_name}.ts`);
-        const json_path = path.resolve(json_dist, `${font_name}.json`);
+        const json_path = path.resolve(json_dist, `${font_name.toLowerCase()}.json`);
 
         if (font.files.regular) {
             try {
