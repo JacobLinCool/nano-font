@@ -33,14 +33,13 @@ async function build(force_rebuild = false) {
             }
             return res.json();
         })
-        .then((json) => json.items as GoogleFont[]);
+        .then((json: any) => json.items as GoogleFont[]);
 
     spinner.succeed(`Fetched ${google_font_list.length} fonts from Google Fonts`);
 
     fs.mkdirSync(code_dist, { recursive: true });
     fs.mkdirSync(json_dist, { recursive: true });
 
-    // @ts-ignore
     await woff2.init();
 
     const font_list: string[] = [];
@@ -54,7 +53,9 @@ async function build(force_rebuild = false) {
         const code_path = path.resolve(code_dist, `${font_name}.ts`);
         const json_path = path.resolve(json_dist, `${font_name.toLowerCase()}.json`);
 
-        if (font.files.regular) {
+        const target_font = font.files.regular || font.files[700];
+
+        if (target_font) {
             try {
                 spinner.start(
                     [
@@ -64,7 +65,7 @@ async function build(force_rebuild = false) {
                 );
 
                 if (force_rebuild || !fs.existsSync(code_path)) {
-                    const base64 = await get_font_base64(font.files.regular);
+                    const base64 = await get_font_base64(target_font);
                     const size = Math.round(base64.length / 102.4) / 10;
                     fs.writeFileSync(code_path, T(template, { font, base64, font_name, size }));
                     fs.writeFileSync(json_path, JSON.stringify({ name: font.family, base64 }));
@@ -93,7 +94,7 @@ async function build(force_rebuild = false) {
 
 async function get_font_base64(url: string): Promise<string> {
     const res = await fetch(url);
-    const buffer = await res.buffer();
+    const buffer = await res.arrayBuffer();
 
     const font = Font.create(buffer, {
         type: path.extname(url).slice(1) as FontEditor.FontType,

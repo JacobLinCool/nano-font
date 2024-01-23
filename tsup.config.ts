@@ -3,9 +3,9 @@ import { defineConfig } from "tsup";
 export default defineConfig((options) => ({
     entry: ["src/**/*.ts"],
     outDir: "fonts",
-    target: "node14",
+    target: "node16",
     format: ["esm", "cjs"],
-    clean: true,
+    clean: false,
     bundle: false,
     splitting: false,
     minify: !options.watch,
