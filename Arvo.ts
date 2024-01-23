@@ -1,6 +1,6 @@
 
 /**
- * Arvo (serif) v20 (2022-04-20) | 15.4 KB
+ * Arvo (serif) v22 (2023-08-25) | 15.4 KB
  * 
  * [View Arvo on Google Fonts](https://fonts.google.com/specimen/Arvo)
  * @module

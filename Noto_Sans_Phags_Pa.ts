@@ -1,20 +1,20 @@
 
 /**
- * Noto Sans Phags Pa (sans-serif) v15 (2022-05-10) | 1.5 KB
+ * Noto Sans Phags Pa (sans-serif) v15 (2022-05-10) | 1.6 KB
  * 
  * [View Noto Sans Phags Pa on Google Fonts](https://fonts.google.com/specimen/Noto+Sans+Phags+Pa)
  * @module
  */
 
-/** Noto Sans Phags Pa (sans-serif) | 1.5 KB | see https://fonts.google.com/specimen/Noto+Sans+Phags+Pa */
+/** Noto Sans Phags Pa (sans-serif) | 1.6 KB | see https://fonts.google.com/specimen/Noto+Sans+Phags+Pa */
 export const name = "Noto Sans Phags Pa";
-/** Noto Sans Phags Pa (sans-serif) | 1.5 KB | see https://fonts.google.com/specimen/Noto+Sans+Phags+Pa */
-export const base64: string = "data:font/woff2;charset=utf-8;base64,d09GMgABAAAAAASAAAsAAAAADOgAAAQ0AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGx4GYACCQgooQAsGAAE2AiQDCAQgBZMKByYbMQwRlZyyZD8O7GauDosMshHEw4PNGC+hGUYe7PEA7e+/M3PnQ1qjCWgOGUTcuIkhqlFtq/wCYNOmvU6TLnMRpoQdch5Ko/uWIWD9WQr5X3Op99qOj5AHb/wJWWv/JnvwC8Q7pyLMJgXA8QiqDtUZV+EYlKqUfYDnYTe4UaeuXECxVoRJU2YtUihBLgcpXA/H5REPxmWYWXuhYY1hYQKxJC+mvBRj2k5WicIITJ07d2oYp1NnGvj/lTQw9ESA2BivohNkyNAqgFEyAa2STiRJQGcul/t9uQ8BCPka/50g8TIjSIgoRDEggUhKJXllaUNZXuma+5fu+2Ej7UggIPLswbpVaytGfSvMso94WnFjAl6XnFm2hvAr3idfBAFMZxKXCXJhjJDykEgvL1T1T6M9bBPyB69PBVUGjxEVGIdMN1ORNNmIPGV2Il+DYyjQzTUUqnMXRWq9QbEun1CiI1SjVHsYirIwM8xNX645XpQJqQhr4o0Egm5ZNaLybAQyk7IJSIZle5GnObuDfIOyhygwKUGhfmkSivRJ21BsQjqLEmPSc5QalVePsng2b1a5qnxEwUftTlaifZn2VpWam+Pr6oLwx0FIvyQhqExiWAXjeWXOaZZ8uCsMUuHJz9WUcTK510l/UC5kHY+P3L3HVfMJOaWeR3szmSxtWlAix5p8rBLvAtsDSTEozbCB2LpMKyT35jkUPTqjNMYbPcrthhPptpS729X+p42kaUR+y+ohD5R92jBpqio1P+WCTDmXW1YCUXB/0xwBEGTe7vkpJkGnW4GqOp+tUN2Y9sd+umXZXdZqWIEu3+xohR7BsuTf1y+0LQUnsLmU8hfEWmGFyE55MGLslmXVseOGFbSawSTrrY25aKTVZxyG6MtNhYFzh6TVHLcW+33Qo/lFn9pzjj4IeHDn3iswJvJbBCo1N0B3uwUlgHnqeiBjPqC9sSQhUJnEYBWM55Up0e+3Jj+4cdcMfhrruvEnCSrnlxviOtlb+oaCPH+z9xKOlAAL+odWjmmi5TTJxuIuf0IbQE5c9YJSuvbcLuVdZfMx+a2qB8iDDL93jWa35LvQgv8zQLPbLOm8EaQZbD/cZhwX3vBsT3+jod0tj3JL6kroFjhoR7MXHM2yt7G2DuLIo221gErsquUolgLttedtY4OJ+aj3yeLqBhIQ6FZzoGkcnEgdPAeLK19FIe6pPXbAKrZ9S3Lqfy9sExQEJgU7ulVQVR3uTVNOXJ3+o+qJ/qqT0d2y7C6r1RB2ui5BXy8HWwuVu1wuRlRx/4GZWk/k1mIUGc5TwVObmdnNtMSKu9pt1NLHH1SIYroWOMKDeXvdRLcVg1bipKlqjccho+VdVaGRy2KXa7GnNavFSF57OsDyk/bRZ9rTb+1ZacdRCqL+WqGaG1T/7lb4BsftDcr+lh7NL0Hu8oMDMxkdXgAA";
-/** Noto Sans Phags Pa (sans-serif) | 1.5 KB | see https://fonts.google.com/specimen/Noto+Sans+Phags+Pa */
+/** Noto Sans Phags Pa (sans-serif) | 1.6 KB | see https://fonts.google.com/specimen/Noto+Sans+Phags+Pa */
+export const base64: string = "data:font/woff2;charset=utf-8;base64,d09GMgABAAAAAASkAAsAAAAADOgAAARYAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGx4GYACCQgooQAsGAAE2AiQDCAQgBZMKByYbMQzIHgXuniKUtAyWGi4hiMUdAbXf6x68ELFMkW0Vjo/QBfbAQlah0JFFcBGmgP9yaepLCoE7xl8Lsrvc5CtpRX8qdy7aG+26EZQQFIRDSAgIY4Oh+X/+19LpDTD+hEx54yMkVm67g/uU1neiEGbvqEVnPK0rXJqKcQjXi1JIyQLebkYtnQvklQuo0kMIO3ePc/FWhlIJ5PAg/FYQr8aPhAPaCw3HXIXtRKwuYi5yjPk0qYFQEYE9r/oHWwHIs//fk2fDKCFA7Ij3MUAgIaHHAVh1JKDHsQFClgUMlErc7yt9FYBQxvjvBMTLjCAjogJVgAwiOVcXtflUbVFzbP3Oul+6NbdCQEDk+dvj94/Xr36rSGkDXtU/3E7wofraUd+J8Cuuo0wEAUxlH1FxvMqmgncqI6Q1ueW1FWq4MaovrJWrna+eChqdk4jKbUUypI+sU4VCrbMo0+4Xyg35gwqt/qJSi3+oMug/qvWHJtToC4uoDQfCkeJ1uuJtSciVONaHWQRDqQlRXVpBsvO2I1tKF1HoSk9RZi49Q7mdgwpTeScqTeQ1VNm+66i2Ob9BjdWiDbXxepFuqbNSvjG8i2miukz7sAzF2fF1PSXTx0EoPkVGyHQgmJXa00yf08y/uisMMYD7z5UFo5nqUzIcVA2sXvKRjU9btZ+QU47yxN5MtkcHJhhwbk0+VkmwhFqCFDtQ2psGvGqlhnH12XMoBkaMcjze7y2f17gez6XqVaPqnzaSEyOxatl9yAN3dtqa0HRkcnzKBUnpyy27IVF3eWYuA5pk3+55Bh2g0cxAZo3PVujemPbHPjTTtDnNZTcDlb7Z0TbVg3L+p69fqKYKem1zM8YviJVmZq035cGI3i3LuseOW9OgrQQ6mOVab4FGTvuswxBD/elioO+QtJOq5ZT9PqjeWLSh2l5U8UoMXLlw6R7oQ8hbsoAUFM6ApqUlkAKI8q6HRaxowzLOTCGGQEYLCJgpaR6Z0VKWt7akRVfOXJjRZ32qp++5BS4Xxi1ySs60c4sBT++9W4BUUAA8MDcdpYoWHcnEIs2wVvwlLQDkRKuZQIHu3qvL0krZeyXwdXV22ACU+ONzlrYq812WAV7sAbS8KWM6wzYTqz05d25rjp7xvM7zWBFdOee72XlL00HnwAWrDgfByYStGVV3roxG6tVrGMiirpNto5JZVTXXUqVgBRREsxYYXA1gZX2ZMtIYUGoi0NKFYzA7Ce0r2KWwVw88RSbpsJh6scZeYxgFWog2NGVRKdOgVr7g2EnmD6TcgPJOTiY3pVJN006pC8uspECbMtWpm8nqaXnWE8rkT8CIrC5a221VEUMxL7pTi0TeJizjVFbdS9UwffFBxrJRuh04iAdR/aZQcXURDEsUhqpuzeNQUtNKddGopqirNtiLKluZxrzx0AZWG4Yfs4fWnXfWyB0eV8iIhg8Lfz8pRJUaI2dIZekMirxzSs/YIVC6a2kO049zXgAA";
+/** Noto Sans Phags Pa (sans-serif) | 1.6 KB | see https://fonts.google.com/specimen/Noto+Sans+Phags+Pa */
 export const Noto_Sans_Phags_Pa = {
-    /** Noto Sans Phags Pa (sans-serif) | 1.5 KB */
+    /** Noto Sans Phags Pa (sans-serif) | 1.6 KB */
     name,
-    /** Noto Sans Phags Pa (sans-serif) | 1.5 KB */
+    /** Noto Sans Phags Pa (sans-serif) | 1.6 KB */
     base64
 };
 export default Noto_Sans_Phags_Pa;

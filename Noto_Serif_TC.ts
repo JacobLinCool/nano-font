@@ -1,6 +1,6 @@
 
 /**
- * Noto Serif TC (serif) v23 (2022-05-10) | 23.7 KB
+ * Noto Serif TC (serif) v23 (2022-09-27) | 23.7 KB
  * 
  * [View Noto Serif TC on Google Fonts](https://fonts.google.com/specimen/Noto+Serif+TC)
  * @module

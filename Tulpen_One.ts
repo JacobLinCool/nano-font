@@ -1,6 +1,6 @@
 
 /**
- * Tulpen One (display) v21 (2022-04-27) | 11.6 KB
+ * Tulpen One (display) v25 (2023-08-25) | 11.6 KB
  * 
  * [View Tulpen One on Google Fonts](https://fonts.google.com/specimen/Tulpen+One)
  * @module

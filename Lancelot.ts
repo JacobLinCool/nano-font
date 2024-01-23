@@ -1,6 +1,6 @@
 
 /**
- * Lancelot (display) v22 (2022-04-26) | 17.1 KB
+ * Lancelot (display) v26 (2023-08-25) | 17.1 KB
  * 
  * [View Lancelot on Google Fonts](https://fonts.google.com/specimen/Lancelot)
  * @module

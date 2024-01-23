@@ -1,6 +1,6 @@
 
 /**
- * Noto Serif SC (serif) v22 (2022-05-10) | 23.8 KB
+ * Noto Serif SC (serif) v22 (2022-09-27) | 23.8 KB
  * 
  * [View Noto Serif SC on Google Fonts](https://fonts.google.com/specimen/Noto+Serif+SC)
  * @module
