@@ -16,7 +16,7 @@ devDependencies:
     version: 16.3.2
   fonteditor-core:
     specifier: ^2.3.2
-    version: 2.3.2
+    version: 2.6.3
   node-fetch:
     specifier: ^3.3.2
     version: 3.3.2
@@ -578,8 +578,8 @@ packages:
       undici-types: 5.26.5
     dev: true
 
-  /@xmldom/xmldom@0.8.10:
-    resolution: {integrity: sha512-2WALfTl4xo2SkGCYRt6rDTFfk9R1czmBvUQy12gK2KuRKIpWEhcbbzy8EZXtz/jkRqHX8bFEc6FC1HjX4TUWYw==}
+  /@xmldom/xmldom@0.8.15:
+    resolution: {integrity: sha512-/5NV/vDALVFDXgLmfsy9TRCBlKwO2LNBFzpzvb9iIj+jR+eSc6DLYYvVOdivT/jm7MtU6TebYuRmzEOI7w40UA==}
     engines: {node: '>=10.0.0'}
     dev: true
 
@@ -845,10 +845,10 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
-  /fonteditor-core@2.3.2:
-    resolution: {integrity: sha512-WiyuiE1sshZStLC3yRqIgh9LqMX0T6G1NSFm1I7IXsiHlVlOA1sKQaZCuMW/Kmi4GfJQ/3QaClpaPuw14VyttA==}
+  /fonteditor-core@2.6.3:
+    resolution: {integrity: sha512-YUryIKjkenjZ41E7JvM3V+02Ak4mTHDDTwBWgs9KBzypzHqLZHuua1UDRevZNTKawmnq1dbBAa70Jddl2+F4FQ==}
     dependencies:
-      '@xmldom/xmldom': 0.8.10
+      '@xmldom/xmldom': 0.8.15
     dev: true
 
   /formdata-polyfill@4.0.10:
